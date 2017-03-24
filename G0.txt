@@ -1,0 +1,16 @@
+/VARIABLES
+T,F,E
+
+/TERMINALS
++,*,(,),x
+
+/RULES
+E -> E+T
+E -> T
+T -> T*F
+T -> F
+F -> (E)
+F -> x
+
+/START
+E
