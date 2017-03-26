@@ -22,7 +22,7 @@ class File_reader():
 
 	def read_input(self):
 		r = self._Reader()
-		for i in input_as_list:
+		for i in input_as_list: # Change the read type to the correct specification using the strategy pattern
 			if i == "/VARIABLES":
 				r.set_read_type(self._Read_variables())
 			elif i == "/TERMINALS":
@@ -34,10 +34,11 @@ class File_reader():
 			else:
 				r.read(i)
 
-	def get_cfg(self):
+	def get_cfg(self): # Return the CFG dictionary object
 		return self.cfg
 
-	def print_cfg(self):
+	def print_cfg(self): # Print each tuple of the CFG dictionary object
+		print(20*'-', "REMOVE UNIT RULES", 20*'-')
 		print("Variables: \t", self.cfg["variables"])
 		print("Terminals: \t", self.cfg["terminals"])
 		print("Rules: \t\t", self.cfg["rules"])
