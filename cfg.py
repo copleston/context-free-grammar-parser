@@ -1,19 +1,30 @@
-from pprint import pprint
+import cfg_reader
 
-read_data = 0
+class CFG():
+	def __init__(self, v_in, t_in, r_in, s_in):
+		self.variables = v_in
+		self.terminals = t_in
+		self.rules = r_in
+		self.start = s_in
 
-def read_cfg(input_file):
-    global read_data   # Increase the scop of read_data variable
-    with open(input_file, 'r') as f:
-        read_data = f.readlines()
+	def create_rules(self):
+		for i in self.rules:
+			rule = i.replace(" ","").split("->")
+			print(rule)
 
-cfg = {
-    "variables": ,
-    "terminals": ,
-    "rules": ,
-    "start": ,
-    }
-    # print(read_data)
 
-read_cfg("cfgA.txt")
-print(read_data[4])
+class Rule():
+	def __init__(self):
+		pass
+
+	variable = ""
+	production = []
+
+
+
+cfg = cfg_reader.File_reader("G0.txt")
+G0_in = cfg.get_cfg()
+
+G0 = CFG(G0_in["variables"], G0_in["terminals"], G0_in["rules"], G0_in["start"])
+print(id(G0))
+G0.create_rules()
