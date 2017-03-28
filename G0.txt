@@ -4,6 +4,7 @@ T,F,E
 /TERMINALS
 +,*,(,),x
 
+
 /RULES
 E -> E+T
 E -> T

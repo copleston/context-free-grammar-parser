@@ -1,0 +1,17 @@
+/VARIABLES
+A,S,B
+
+/TERMINALS
+a,b,e
+
+/RULES
+S -> ASB
+A -> aAS
+A -> a
+A -> e
+B -> SbS
+B -> A
+B -> bb
+
+/START
+S
